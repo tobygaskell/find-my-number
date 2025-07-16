@@ -1,2 +1,20 @@
 # find-my-number
-Project used to answer find-my-number problem
+
+![alt text](image.png)
+Given the above keypad find all 10 key sequences that can be keyed in given the following
+constraints:
+
+1. The initial keypress can be any key. --DONE
+2. Each subsequent keypress must be a knight move from the previous key.
+3. There can be at most 2 vowels in the sequence.
+
+A knight move is defined as either of the following:
+
+- Move two keys vertically and one horizontally.
+- Move two keys horizontally and one vertically.
+
+## To run please use
+
+```
+uv run main.py
+```
