@@ -74,11 +74,13 @@ def main():
 
         total_paths.append([path for path in paths if path.length == CNT])
 
-    logger.info("Total Number of valid Paths: %s", len(paths))
+    final_paths = [item for sublist in total_paths for item in sublist]
 
-    index = random.choice(range(len(paths)))  # noqa: S311
+    logger.info("Total Number of valid Paths: %s", len(final_paths))
 
-    logger.info("Example Path: %s", [move.label for move in paths[index].moves])
+    index = random.choice(range(len(final_paths)))  # noqa: S311
+
+    logger.info("Example Path: %s", [move.label for move in final_paths[index].moves])
 
 
 if __name__ == "__main__":
