@@ -35,3 +35,31 @@ uv run main.py
 ```
 uv run pytest --cov .
 ```
+
+To run without uv please run the following commands (reccomended method is to create a virtual environment)
+
+## Create and activate Virtual environment
+
+```
+python -m venv venv
+venv/Scripts/activate
+```
+
+## install dependencies
+
+```
+pip install pytest
+pip install pytest-cov
+```
+
+## run without uv please use
+
+```
+python main.py
+```
+
+## To run the python tests without please use
+
+```
+pytest --cov .
+```
