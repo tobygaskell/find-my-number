@@ -1,4 +1,4 @@
-"""Path object for find-my-number problem - will be a combination of positions."""
+"""Path object for find-my-number problem - will be a seen as an array of positions."""
 
 
 class Path:

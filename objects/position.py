@@ -46,17 +46,17 @@ class Position:
             {"y": -1, "x": 2},
             {"y": 1, "x": 2},
         ]
+        new_positions = [(self.x + move["x"], self.y + move["y"]) for move in movemenets]
 
         possible_moves = [
             Position(
-                self.x + move["x"],
-                self.y + move["y"],
-                board.board[self.y + move["y"]][self.x + move["x"]],
+                pos[0],
+                pos[1],
+                board.board[pos[1]][pos[0]],
                 True,
             )
-            for move in movemenets
-            if check_value(self.x + move["x"], board.width - 1)
-            and check_value(self.y + move["y"], board.height - 1)
+            for pos in new_positions
+            if check_value(pos[0], board.width - 1) and check_value(pos[1], board.height - 1)
         ]
 
         return [move for move in possible_moves if move.valid_move(board.width, board.height)]

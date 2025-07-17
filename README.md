@@ -18,3 +18,9 @@ A knight move is defined as either of the following:
 ```
 uv run main.py
 ```
+
+## To run the python tests to ensure logic is correct
+
+```
+uv run pytest --cov .
+```
