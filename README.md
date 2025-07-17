@@ -1,6 +1,7 @@
 # find-my-number
 
 ![alt text](image.png)
+
 Given the above keypad find all 10 key sequences that can be keyed in given the following
 constraints:
 
@@ -13,13 +14,23 @@ A knight move is defined as either of the following:
 - Move two keys vertically and one horizontally.
 - Move two keys horizontally and one vertically.
 
+# Useage
+
+Before running ensure you have uv installed (can be downloaded from the company store - but will need a S4 reboot)
+
+## To initialise the project please run
+
+```
+uv sync
+```
+
 ## To run please use
 
 ```
 uv run main.py
 ```
 
-## To run the python tests to ensure logic is correct
+## To run the python tests please use
 
 ```
 uv run pytest --cov .
