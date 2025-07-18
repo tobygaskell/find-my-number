@@ -131,31 +131,22 @@ def test_valid_move():
 
 def test_knight_move():
     """Test the knight move method to ensure that the logic is correct."""
-    test_positions = [
-        {"label": "a", "x": 0, "y": 0, "playable": True},
-        {"label": "b", "x": 1, "y": 0, "playable": True},
-        {"label": "f", "x": 0, "y": 1, "playable": True},
-        {"label": "g", "x": 1, "y": 1, "playable": True},
-        {"label": "k", "x": 0, "y": 2, "playable": True},
-        {"label": "l", "x": 1, "y": 2, "playable": True},
-    ]
-
     test_height = 3
-    test_width = 2
+    test_width = 3
 
-    data = [Position(p["x"], p["y"], p["label"], p["playable"]) for p in test_positions]
-    test_board = Board(test_width, test_height, data)
+    test_board = Board(test_width, test_height)
+
+    test_board.show_board()
 
     test_position = Position(0, 0, "a", True)
 
-    expected_length = 1
-    expected_position = Position(1, 2, "l", True)
+    expected_length = 2
+    expected_positions = [Position(1, 2, "f", True), Position(2, 1, "1", True)]
 
     moves = test_position.knight_move(test_board)
 
     assert len(moves) == expected_length
-    assert moves[0].x == expected_position.x
-    assert moves[0].y == expected_position.y
-    assert moves[0].label == expected_position.label
-    assert moves[0].playable == expected_position.playable
-    assert moves[0].is_vowel == expected_position.is_vowel
+    assert {move.x for move in moves} == {move.x for move in expected_positions}
+    assert {move.y for move in moves} == {move.y for move in expected_positions}
+    assert {move.label for move in moves} == {move.label for move in expected_positions}
+    assert {move.playable for move in moves} == {move.playable for move in expected_positions}

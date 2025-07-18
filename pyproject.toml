@@ -9,9 +9,6 @@ dependencies = [
     "pytest-cov>=6.2.1",
 ]
 
-[[tool.uv.index]]
-name = "schroders"
-url = "https://packages.schroders.com/artifactory/api/pypi/pypi/simple/"
 
 [tool.ruff]
 lint.extend-select = [
@@ -30,6 +27,7 @@ lint.ignore = [
     "N999",
     "S101",
     "D203",
+    "PERF401",
 ]
 
 # Allow lines to be as long as 100.
