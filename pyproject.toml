@@ -32,7 +32,7 @@ lint.ignore = [
 # Allow lines to be as long as 100.
 line-length = 100
 
-[dependency-groups]
+[project.optional-dependencies]
 dev = [
-    "ty>=0.0.1a15",
+    "ty>=0.0.1a15"
 ]
