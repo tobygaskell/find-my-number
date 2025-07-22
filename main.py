@@ -1,4 +1,4 @@
-"""Entery point for find-my-number."""
+"""Entry point for find-my-number."""
 
 import logging
 import time

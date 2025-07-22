@@ -35,3 +35,8 @@ line-length = 100
 
 # Group violations by containing file.
 output-format = "grouped"
+
+[dependency-groups]
+dev = [
+    "ty>=0.0.1a15",
+]

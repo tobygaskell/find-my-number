@@ -36,6 +36,18 @@ uv run main.py
 uv run pytest --cov .
 ```
 
+## To run a linting check please run
+
+```
+uvx ruff check .
+```
+
+## To run a type checker please run
+
+```
+uvx ty check .
+```
+
 To run without uv please run the following commands (reccomended method is to create a virtual environment)
 
 ## Create and activate Virtual environment
