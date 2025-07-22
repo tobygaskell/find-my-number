@@ -22,11 +22,18 @@ jobs:
         run: |
           uv sync
 
-      - name: Run Ruff (Linting)
-        run: uvx ruff check --output-format=github .
+      - uses: astral-sh/ruff-action@v3
 
       - name: Run Pytest (Unit Tests)
-        run: uv run pytest --tb=short --disable-warnings
+        run: uv run pytest --tb=short --disable-warnings -v --maxfail=1 --junitxml=test-results.xml
+
+      - if: always()
+        uses: pmeier/pytest-results-action@v0.6.0
+        with:
+          path: test-results.xml
+          summary: true
+          display-options: fEXIT
+          title: "Test Results Toby's"
 
       - name: Run Pyright (Type Checking)
         run: uvx ty check .
