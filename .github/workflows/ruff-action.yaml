@@ -29,4 +29,4 @@ jobs:
         run: uv run pytest --tb=short --disable-warnings
 
       - name: Run Pyright (Type Checking)
-        run: uvx ty check --outputformat=github .
+        run: uvx ty check .
