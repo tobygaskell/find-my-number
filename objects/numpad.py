@@ -1,6 +1,15 @@
 """Board object for find-my-number problem."""
 
+import logging
+
 from objects.position import Position
+
+logger = logging.getLogger(__name__)
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(message)s",
+)
 
 
 class Board:
@@ -24,7 +33,7 @@ class Board:
 
         for row in self.board:
             formatted_row = [cell.ljust(max_len) for cell in row]
-            print(" | ".join(formatted_row))  # noqa: T201
+            logger.info(" | ".join(formatted_row))
 
     def init_positions(self):
         """Set up the board with the positions given."""

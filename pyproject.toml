@@ -9,6 +9,8 @@ dependencies = [
     "pytest-cov>=6.2.1",
 ]
 
+[tool.pytest.ini_options]
+addopts = "--log-cli-level=INFO"
 
 [tool.ruff]
 lint.extend-select = [

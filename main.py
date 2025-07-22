@@ -22,6 +22,7 @@ def main():
     """Run find-my-number (optimized, preserves logic)."""
     find = NumberFinder(WIDTH, HEIGHT, CNT, VOWELS)
     find.find_paths()
+    find.board.show_board()
     logger.info("Total paths found: %d", find.path_cnt)
 
 
