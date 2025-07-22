@@ -20,15 +20,15 @@ VOWELS: int = 2
 
 def main():
     """Run find-my-number (optimized, preserves logic)."""
+    logger.info("Starting find-my-number")
+    start_time = time.time()
     find = NumberFinder(WIDTH, HEIGHT, CNT, VOWELS)
     find.find_paths()
     find.board.show_board()
     logger.info("Total paths found: %d", find.path_cnt)
+    end_time = time.time()
+    logger.info("Elapsed time: %.2f seconds", end_time - start_time)
 
 
 if __name__ == "__main__":
-    logger.info("Starting find-my-number")
-    start_time = time.time()
     main()
-    end_time = time.time()
-    logger.info("Elapsed time: %.2f seconds", end_time - start_time)
