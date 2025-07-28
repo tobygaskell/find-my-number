@@ -5,7 +5,7 @@
 Given the above keypad find all 10 key sequences that can be keyed in given the following
 constraints:
 
-1. The initial keypress can be any key. --DONE
+1. The initial keypress can be any key.
 2. Each subsequent keypress must be a knight move from the previous key.
 3. There can be at most 2 vowels in the sequence.
 
@@ -13,6 +13,13 @@ A knight move is defined as either of the following:
 
 - Move two keys vertically and one horizontally.
 - Move two keys horizontally and one vertically.
+
+As a follow up task, can you please work out the answer to the same question however this time the allowed moves are bishop moves.
+
+A Bishop move is defined as follows:
+
+- Diagonally in any direction
+- Any distance is acceptable as long as you are not off the board.
 
 # Useage
 
@@ -33,7 +40,7 @@ uv run main.py
 ## To run the python tests please use
 
 ```
-uv run pytest --cov .
+uv run pytest -s --cov .
 ```
 
 ## To run a linting check please run
@@ -73,5 +80,5 @@ python main.py
 ## To run the python tests without please use
 
 ```
-pytest --cov .
+pytest -s --cov .
 ```

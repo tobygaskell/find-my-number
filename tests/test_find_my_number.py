@@ -9,6 +9,7 @@ def test_number_finder():
     test_height: int = 2
     test_cnt: int = 3
     test_vowels: int = 1
+    test_method: str = "knight"
     expected_paths: list = []
     expected_path_cnt: int = 0
     finder = NumberFinder(
@@ -16,6 +17,7 @@ def test_number_finder():
         test_height,
         test_cnt,
         test_vowels,
+        test_method,
     )
 
     assert finder.width == test_width
@@ -26,7 +28,7 @@ def test_number_finder():
     assert finder.board.height == test_height
     assert finder.total_paths == expected_paths
     assert finder.path_cnt == expected_path_cnt
-    assert isinstance(finder.knight_moves_cache, dict)
+    assert isinstance(finder.board.knight_moves_cache, dict)
 
 
 def test_find_paths():
@@ -35,11 +37,13 @@ def test_find_paths():
     test_height: int = 2
     test_cnt: int = 3
     test_vowels: int = 1
+    test_method: str = "knight"
     finder = NumberFinder(
         test_width,
         test_height,
         test_cnt,
         test_vowels,
+        test_method,
     )
     finder.find_paths()
 
@@ -56,11 +60,13 @@ def test_find_paths_with_results():
     test_height: int = 3
     test_cnt: int = 3
     test_vowels: int = 0
+    test_method: str = "knight"
     finder = NumberFinder(
-        width=test_width,
-        height=test_height,
-        cnt=test_cnt,
-        vowels=test_vowels,
+        test_width,
+        test_height,
+        test_cnt,
+        test_vowels,
+        test_method,
     )
 
     finder.find_paths()
