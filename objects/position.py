@@ -48,6 +48,57 @@ class Position:
             is_vowel = True
         return is_vowel
 
+    def bishop_move(self, board):
+        """Logic for the bishop move criteria."""
+        possible_left = self.x
+        possible_up = self.y
+        possible_down = board.height - (self.y + 1)
+        possible_right = board.width - (self.x + 1)
+
+        north_east = min(possible_right, possible_up)
+        south_east = min(possible_right, possible_down)
+        north_west = min(possible_left, possible_up)
+        south_west = min(possible_left, possible_down)
+
+        possible_moves = []
+        for place in range(north_east):
+            possible_moves.append(
+                Position(
+                    self.x + (place + 1),
+                    self.y - (place + 1),
+                    board.board[self.y - (place + 1)][self.x + (place + 1)],
+                    True,
+                ),
+            )
+        for place in range(south_east):
+            possible_moves.append(
+                Position(
+                    self.x + (place + 1),
+                    self.y + (place + 1),
+                    board.board[self.y + (place + 1)][self.x + (place + 1)],
+                    True,
+                ),
+            )
+        for place in range(north_west):
+            possible_moves.append(
+                Position(
+                    self.x - (place + 1),
+                    self.y - (place + 1),
+                    board.board[self.y - (place + 1)][self.x - (place + 1)],
+                    True,
+                ),
+            )
+        for place in range(south_west):
+            possible_moves.append(
+                Position(
+                    self.x - (place + 1),
+                    self.y + (place + 1),
+                    board.board[self.y + (place + 1)][self.x - (place + 1)],
+                    True,
+                ),
+            )
+        return [move for move in possible_moves if move.valid_move(board.width, board.height)]
+
     def knight_move(self, board):
         """Logic for the knight move criteria."""
         right_one_up_two = {"x": -1, "y": -2}

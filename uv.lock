@@ -79,7 +79,7 @@ dependencies = [
     { name = "pytest-cov" },
 ]
 
-[package.dev-dependencies]
+[package.optional-dependencies]
 dev = [
     { name = "ty" },
 ]
@@ -88,10 +88,9 @@ dev = [
 requires-dist = [
     { name = "pytest", specifier = ">=8.4.1" },
     { name = "pytest-cov", specifier = ">=6.2.1" },
+    { name = "ty", marker = "extra == 'dev'", specifier = ">=0.0.1a15" },
 ]
-
-[package.metadata.requires-dev]
-dev = [{ name = "ty", specifier = ">=0.0.1a15" }]
+provides-extras = ["dev"]
 
 [[package]]
 name = "iniconfig"

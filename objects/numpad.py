@@ -26,6 +26,12 @@ class Board:
             for x, label in enumerate(row)
             if label != "-"
         ]
+        self.knight_moves_cache = {
+            (pos.x, pos.y, pos.label): pos.knight_move(self) for pos in self.positions
+        }
+        self.bishop_moves_cache = {
+            (pos.x, pos.y, pos.label): pos.bishop_move(self) for pos in self.positions
+        }
 
     def show_board(self):
         """Display the board to standard out with aligned columns."""
